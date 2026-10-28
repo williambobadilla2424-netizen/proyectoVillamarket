@@ -1,9 +1,12 @@
 from rest_framework import viewsets, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from .models import categoria_producto, usuario, producto, carrito, pedido, pago
-from .serializers import categoriaProductoSerializers,usuarioSerialzers,productoSerializers,carritoSerializers,pedidoSerializers,pagoSerializers
+from .models import rol,categoria_producto, usuario, producto, carrito, pedido, pago
+from .serializers import rolSerializers,categoriaProductoSerializers,usuarioSerialzers,productoSerializers,carritoSerializers,pedidoSerializers,pagoSerializers
 
+class rolViewSet(viewsets.ModelViewSet):
+    queryset = rol.objects.all()
+    serializer_class = rolSerializers
 class categoriaProductoViewSet(viewsets.ModelViewSet):
     queryset = categoria_producto.objects.all()
     serializer_class = categoriaProductoSerializers

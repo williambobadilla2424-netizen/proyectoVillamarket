@@ -1,5 +1,10 @@
 from rest_framework import serializers
-from .models import categoria_producto, usuario, producto, carrito, pedido, pago
+from .models import rol, categoria_producto, usuario, producto, carrito, pedido, pago
+
+class rolSerializers(serializers.ModelSerializer):
+    class META:
+        model = rol
+        fields = ['id','nombre']
 
 class categoriaProductoSerializers(serializers.ModelSerializer):
     class META:
